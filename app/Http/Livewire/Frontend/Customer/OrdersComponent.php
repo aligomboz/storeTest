@@ -10,7 +10,7 @@ class OrdersComponent extends Component
 {
 
     public $showOrder = false;
-    public $order=[];
+    public $order;
 
     public function displayOrder($id)
     {

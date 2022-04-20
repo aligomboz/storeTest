@@ -4,10 +4,12 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class Carts extends Component
 {
+    use LivewireAlert;
     public $cartCount;
     public $wishlistCount;
 
@@ -34,7 +36,7 @@ class Carts extends Component
     {
         Cart::instance('default')->remove($rowId);
         $this->emit('updateCart');
-        $this->alert('success', 'Item removed from your cart!');
+        $this->alert('success', __('Item removed from your cart!'));
         if (Cart::instance('default')->count() == 0){
             return redirect()->route('frontend.cart');
         }
@@ -44,7 +46,7 @@ class Carts extends Component
     {
         Cart::instance('wishlist')->remove($rowId);
         $this->emit('updateCart');
-        $this->alert('success', 'Item removed from your wish list!');
+        $this->alert('success', __('Item removed from your wish list!'));
         if (Cart::instance('wishlist')->count() == 0){
             return redirect()->route('frontend.wishlist');
         }
@@ -59,11 +61,11 @@ class Carts extends Component
 
         if ($duplicate->isNotEmpty()) {
             Cart::instance('wishlist')->remove($rowId);
-            $this->alert('error', 'Product already exist.');
+            $this->alert('error', __('The product already exists!'));
         } else {
             Cart::instance('default')->add($item->id, $item->name, 1, $item->price)->associate(Product::class);
             Cart::instance('wishlist')->remove($rowId);
-            $this->alert('success', 'Product added in your cart successfully.');
+            $this->alert('success', __('Product added to your cart successfully.'));
         }
 
         $this->emit('updateCart');

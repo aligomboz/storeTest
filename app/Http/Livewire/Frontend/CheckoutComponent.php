@@ -6,10 +6,12 @@ use App\Models\PaymentMethod;
 use App\Models\ProductCoupon;
 use App\Models\ShippingCompany;
 use App\Models\UserAddress;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class CheckoutComponent extends Component
 {
+    use LivewireAlert;
     public $cart_subtotal;
     public $cart_tax;
     public $cart_total;
@@ -56,7 +58,7 @@ class CheckoutComponent extends Component
             $coupon = ProductCoupon::whereCode($this->coupon_code)->whereStatus(true)->first();
             if(!$coupon) {
                 $this->cart_coupon = '';
-                $this->alert('error', 'Coupon is invalid!');
+                $this->alert('error', __('The coupon is invalid!'));
             } else {
                 $couponValue = $coupon->discount($this->cart_subtotal);
                 if ($couponValue > 0) {
@@ -68,16 +70,16 @@ class CheckoutComponent extends Component
                     $this->coupon_code = session()->get('coupon')['code'];
                     $this->emit('updateCart');
 
-                    $this->alert('success', 'coupon is applied successfully');
+                    $this->alert('success', __('coupon is applied successfully'));
                 } else {
-                    $this->alert('error', 'product coupon is invalid');
+                    $this->alert('error', __('product coupon is invalid'));
                 }
 
             }
 
         } else {
             $this->cart_coupon = '';
-            $this->alert('error', 'No products available in your cart');
+            $this->alert('error', __('No products available in your cart'));
         }
     }
 
@@ -86,7 +88,7 @@ class CheckoutComponent extends Component
         session()->remove('coupon');
         $this->coupon_code = '';
         $this->emit('updateCart');
-        $this->alert('success', 'Coupon is removed');
+        $this->alert('success', __('Coupon is removed'));
     }
 
     public function updateShippingCompanies()
@@ -153,7 +155,7 @@ class CheckoutComponent extends Component
             'cost' => $selectedShippingCompany->cost,
         ]);
         $this->emit('updateCart');
-        $this->alert('success', 'Shipping cost is applied successfully');
+        $this->alert('success', __('Shipping cost is applied successfully'));
     }
 
     public function updatePaymentMethod()

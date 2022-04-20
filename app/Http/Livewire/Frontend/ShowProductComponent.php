@@ -4,10 +4,12 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class ShowProductComponent extends Component
 {
+    use LivewireAlert;
     public $product;
     public $quantity = 1;
 
@@ -28,7 +30,7 @@ class ShowProductComponent extends Component
         if ($this->product->quantity > $this->quantity) {
             $this->quantity++;
         } else {
-            $this->alert('warning', 'This is maximum quantity you can add!');
+            $this->alert('warning', __('This is maximum quantity you can add!'));
         }
     }
 
@@ -38,11 +40,11 @@ class ShowProductComponent extends Component
             return $cartItem->id === $this->product->id;
         });
         if ($duplicates->isNotEmpty()) {
-            $this->alert('error', 'Product already exist!');
+            $this->alert('error', __('The product already exists!'));
         } else {
             Cart::instance('default')->add($this->product->id, $this->product->name, 1, $this->product->price)->associate(Product::class);
             $this->emit('updateCart');
-            $this->alert('success', 'Product added in your cart successfully.');
+            $this->alert('success', __('Product added to your cart successfully.'));
         }
     }
 
@@ -52,11 +54,11 @@ class ShowProductComponent extends Component
             return $cartItem->id === $this->product->id;
         });
         if ($duplicates->isNotEmpty()) {
-            $this->alert('error', 'Product already exist!');
+            $this->alert('error', __('The product already exists!'));
         } else {
             Cart::instance('wishlist')->add($this->product->id, $this->product->name, 1, $this->product->price)->associate(Product::class);
             $this->emit('updateCart');
-            $this->alert('success', 'Product added in your wishlist cart successfully.');
+            $this->alert('success', __('Product added to your wishlist cart successfully.'));
         }
     }
 

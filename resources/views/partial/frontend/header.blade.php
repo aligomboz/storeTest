@@ -35,12 +35,12 @@
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">
-                                <i class="fas fa-user-alt mr-1 text-gray"></i>Login
+                                <i class="fas fa-user-alt mr-1 text-gray"></i>{{ __('Login') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">
-                                <i class="fas fa-user-alt mr-1 text-gray"></i>Register
+                                <i class="fas fa-user-alt mr-1 text-gray"></i>{{ __('Register') }}
                             </a>
                         </li>
                     @else

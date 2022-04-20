@@ -4,10 +4,12 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class ProductModalShared extends Component
 {
+    use LivewireAlert;
     public $productModalCount = false;
     public $productModal = [];
     public $quantity = 1;
@@ -26,7 +28,7 @@ class ProductModalShared extends Component
         if ($this->productModal->quantity > $this->quantity) {
             $this->quantity++;
         } else {
-            // $this->alert('warning', 'This is maximum quantity you can add!');
+            $this->alert('warning', __('This is maximum quantity you can add!'));
         }
     }
 
@@ -36,12 +38,12 @@ class ProductModalShared extends Component
             return $cartItem->id === $this->productModal->id;
         });
         if ($duplicates->isNotEmpty()) {
-            $this->alert('error', 'Product already exist!');
+            $this->alert('error', __('The product already exists!'));
         } else {
             Cart::instance('default')->add($this->productModal->id, $this->productModal->name, $this->quantity, $this->productModal->price)->associate(Product::class);
             $this->quantity = 1;
             $this->emit('updateCart');
-            // $this->alert('success', 'Product added in your cart successfully.');
+            $this->alert('success', __('Product added to your cart successfully.'));
         }
     }
 
@@ -51,11 +53,11 @@ class ProductModalShared extends Component
             return $cartItem->id === $this->productModal->id;
         });
         if ($duplicates->isNotEmpty()) {
-            // $this->alert('error', 'Product already exist!');
+            $this->alert('error', __('The product already exists!'));
         } else {
             Cart::instance('wishlist')->add($this->productModal->id, $this->productModal->name, 1, $this->productModal->price)->associate(Product::class);
             $this->emit('updateCart');
-            // $this->alert('success', 'Product added in your wishlist cart successfully.');
+            $this->alert('success', __('Product added to your wishlist cart successfully.'));
         }
     }
 

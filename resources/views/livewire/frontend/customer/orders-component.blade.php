@@ -17,10 +17,10 @@
                 </thead>
                 <tbody>
                     {{-- {{ dd($orders) }} --}}
-                    @foreach ($orders as  $item)
+                    {{-- @foreach ($orders as  $item)
                         
                         {{ dd($item) }}
-                    @endforeach
+                    @endforeach --}}
                 @forelse($orders as  $order)
                     <tr wire:key="{{ $order->id }}">
                         <td>{{ $order->ref_id }}</td>

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-8">
-        <h2 class="h5 text-uppercase mb-4">Sipping addresses</h2>
+        <h2 class="h5 text-uppercase mb-4">{{ __('Shipping addresses') }}</h2>
         <div class="row">
             @forelse($addresses as $address)
                 <div class="col-6 form-group">
@@ -24,13 +24,13 @@
                 </div>
 
             @empty
-                <p>No addresses found</p>
-                <a href="{{ route('customer.dashboard') }}">Add an address</a>
+                <p>{{ __('No addresses found') }}</p>
+                <a href="{{ route('customer.dashboard') }}">{{ __('Add an address') }}</a>
             @endforelse
         </div>
 
         @if ($customer_address_id != 0)
-            <h2 class="h5 text-uppercase mb-4">Sipping way</h2>
+            <h2 class="h5 text-uppercase mb-4">{{ __('shipping way') }}</h2>
             <div class="row">
                 @forelse($shipping_companies as $shipping_company)
                     <div class="col-6 form-group">
@@ -53,13 +53,13 @@
                     </div>
 
                 @empty
-                    <p>No shipping companies found</p>
+                    <p>{{ __('No shipping companies found') }}</p>
                 @endforelse
             </div>
         @endif
 
         @if ($customer_address_id != 0 && $shipping_company_id != 0)
-            <h2 class="h5 text-uppercase mb-4">Payment way</h2>
+            <h2 class="h5 text-uppercase mb-4">{{ __('Payment way') }}</h2>
             <div class="row">
                 @forelse($payment_methods as $payment_method)
                     <div class="col-6 form-group">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                 @empty
-                    <p>No payment way found</p>
+                    <p>{{ __('No payment way found') }}</p>
                 @endforelse
             </div>
         @endif
@@ -91,7 +91,7 @@
                     <input type="hidden" name="shipping_company_id" value="{{ old('shipping_company_id', $shipping_company_id) }}" class="form-control">
                     <input type="hidden" name="payment_method_id" value="{{ old('payment_method_id', $payment_method_id) }}" class="form-control">
                     <button type="submit" name="submit" class="btn btn-dark btn-sm btn-block">
-                        Continue to checkout with PayPal
+                        {{ __('Continue to checkout with PayPal') }}
                     </button>
                 </form>
             @endif
@@ -106,34 +106,34 @@
     <div class="col-lg-4">
         <div class="card border-0 rounded-0 p-lg-4 bg-light">
             <div class="card-body">
-                <h5 class="text-uppercase mb-4">Your order</h5>
+                <h5 class="text-uppercase mb-4">{{ __('Your order') }}</h5>
                 <ul class="list-unstyled mb-0">
                     <li class="d-flex align-items-center justify-content-between">
-                        <strong class="small font-weight-bold">Subtotal</strong>
+                        <strong class="small font-weight-bold">{{ __('Subtotal') }}</strong>
                         <span class="text-muted small">${{ $cart_subtotal }}</span>
                     </li>
                     @if(session()->has('coupon'))
                         <li class="border-bottom my-2"></li>
                         <li class="d-flex align-items-center justify-content-between">
-                            <strong class="small font-weight-bold">Discount <small>({{ getNumbers()->get('discount_code') }})</small></strong>
+                            <strong class="small font-weight-bold">{{ __('Discount') }} <small>({{ getNumbers()->get('discount_code') }})</small></strong>
                             <span class="text-muted small">- ${{ $cart_discount }}</span>
                         </li>
                     @endif
                     @if(session()->has('shipping'))
                         <li class="border-bottom my-2"></li>
                         <li class="d-flex align-items-center justify-content-between">
-                            <strong class="small font-weight-bold">Shipping <small>({{ getNumbers()->get('shipping_code') }})</small></strong>
+                            <strong class="small font-weight-bold">{{ __('shipping fee') }} <small>({{ getNumbers()->get('shipping_code') }})</small></strong>
                             <span class="text-muted small">${{ $cart_shipping }}</span>
                         </li>
                     @endif
                     <li class="border-bottom my-2"></li>
                     <li class="d-flex align-items-center justify-content-between">
-                        <strong class="small font-weight-bold">Tax</strong>
+                        <strong class="small font-weight-bold">{{ __('Tax') }}</strong>
                         <span class="text-muted small">${{ $cart_tax }}</span>
                     </li>
                     <li class="border-bottom my-2"></li>
                     <li class="d-flex align-items-center justify-content-between">
-                        <strong class="text-uppercase small font-weight-bold">Total</strong>
+                        <strong class="text-uppercase small font-weight-bold">{{ __('Total') }}</strong>
                         <span>${{ $cart_total }}</span>
                     </li>
                     <li class="border-bottom my-2"></li>
@@ -144,11 +144,11 @@
                             @endif
                             @if(session()->has('coupon'))
                                 <button type="button" wire:click.prevent="removeCoupon()" class="btn btn-danger btn-sm btn-block">
-                                    <i class="fas fa-gift mr-2"></i> Remove coupon
+                                    <i class="fas fa-gift mr-2"></i> {{ __('Remove coupon') }}
                                 </button>
                             @else
                                 <button type="submit" class="btn btn-dark btn-sm btn-block">
-                                    <i class="fas fa-gift mr-2"></i> Apply coupon
+                                    <i class="fas fa-gift mr-2"></i> {{ __('Apply coupon') }}
                                 </button>
                             @endif
                         </form>
