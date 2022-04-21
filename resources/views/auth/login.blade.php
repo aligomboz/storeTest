@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="h2 text-uppercase mb-0">Login</h1>
+                    <h1 class="h2 text-uppercase mb-0">{{ __('Login') }}</h1>
                 </div>
                 <div class="col-lg-6 text-lg-right">
 
@@ -24,14 +24,14 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="username">Username</label>
+                                <label class="text-small text-uppercase" for="username">{{ __('Username') }}</label>
                                 <input class="form-control form-control-lg" name="username" type="text" value="{{ old('username') }}" placeholder="Enter your username">
                                 @error('username')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="password">Password</label>
+                                <label class="text-small text-uppercase" for="password">{{ __('Password') }}</label>
                                 <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
                                 @error('password')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>

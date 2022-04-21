@@ -10,11 +10,11 @@ class OrdersComponent extends Component
 {
 
     public $showOrder = false;
-    public $order;
+    public $order = [];
 
     public function displayOrder($id)
     {
-        $this->order = Order::with('products')->find($id);
+        $this->order = Order::with('products')->findOrFail($id);
 
         $this->showOrder = true;
     }

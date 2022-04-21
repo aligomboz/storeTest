@@ -25,51 +25,73 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="first_name">First Name</label>
-                                <input class="form-control form-control-lg" name="first_name" type="text" value="{{ old('first_name') }}" placeholder="Enter your first name">
-                                @error('first_name')<span class="text-danger">{{ $message }}</span>@enderror
+                                <label class="text-small text-uppercase" for="first_name">{{ __('First Name') }}</label>
+                                <input class="form-control form-control-lg" name="first_name" type="text"
+                                    value="{{ old('first_name') }}" placeholder="Enter your first name">
+                                @error('first_name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="last_name">Last Name</label>
-                                <input class="form-control form-control-lg" name="last_name" type="text" value="{{ old('last_name') }}" placeholder="Enter your last name">
-                                @error('last_name')<span class="text-danger">{{ $message }}</span>@enderror
+                                <label class="text-small text-uppercase" for="last_name">{{ __('Last Name') }}</label>
+                                <input class="form-control form-control-lg" name="last_name" type="text"
+                                    value="{{ old('last_name') }}" placeholder="Enter your last name">
+                                @error('last_name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="username">Username</label>
-                                <input class="form-control form-control-lg" name="username" type="text" value="{{ old('username') }}" placeholder="Enter your username">
-                                @error('username')<span class="text-danger">{{ $message }}</span>@enderror
+                                <label class="text-small text-uppercase" for="username">{{ __('Username') }}</label>
+                                <input class="form-control form-control-lg" name="username" type="text"
+                                    value="{{ old('username') }}" placeholder="Enter your username">
+                                @error('username')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="email">E-mail Address</label>
-                                <input class="form-control form-control-lg" name="email" type="email" value="{{ old('email') }}" placeholder="Enter your email address">
-                                @error('email')<span class="text-danger">{{ $message }}</span>@enderror
+                                <label class="text-small text-uppercase" for="email">{{ __('E-mail Address') }}</label>
+                                <input class="form-control form-control-lg" name="email" type="email"
+                                    value="{{ old('email') }}" placeholder="Enter your email address">
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="mobile">Mobile Number</label>
-                                <input class="form-control form-control-lg" name="mobile" type="text" value="{{ old('mobile') }}" placeholder="Enter your mobile number">
-                                @error('mobile')<span class="text-danger">{{ $message }}</span>@enderror
+                                <label class="text-small text-uppercase" for="mobile">{{ __('Mobile Number') }}</label>
+                                <input class="form-control form-control-lg" name="mobile" type="text"
+                                    value="{{ old('mobile') }}" placeholder="Enter your mobile number">
+                                @error('mobile')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="password">Password</label>
-                                <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
-                                @error('password')<span class="text-danger">{{ $message }}</span>@enderror
+                                <label class="text-small text-uppercase" for="password">{{ __('Password') }}</label>
+                                <input class="form-control form-control-lg" name="password" type="password"
+                                    placeholder="Enter your password">
+                                @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="text-small text-uppercase" for="password_confirmation">Password</label>
-                                <input class="form-control form-control-lg" name="password_confirmation" type="password" placeholder="Re type your password">
-                                @error('password_confirmation')<span class="text-danger">{{ $message }}</span>@enderror
+                                <label class="text-small text-uppercase"
+                                    for="password_confirmation">{{ __('Password') }}</label>
+                                <input class="form-control form-control-lg" name="password_confirmation" type="password"
+                                    placeholder="Re type your password">
+                                @error('password_confirmation')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
