@@ -6,13 +6,13 @@
         <div class="container">
             <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="h2 text-uppercase mb-0">{{ auth()->user()->full_name }} Orders</h1>
+                    <h1 class="h2 text-uppercase mb-0">{{ auth()->user()->full_name }} {{ __('Orders') }}</h1>
                 </div>
                 <div class="col-lg-6 text-lg-right">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-lg-end mb-0 px-0">
-                            <li class="breadcrumb-item"><a href="{{ route('frontend.index') }}">Home</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('customer.orders') }}">Orders</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('frontend.index') }}">{{ __('Home') }}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('customer.orders') }}">{{ __('Orders') }}</a></li>
                         </ol>
                     </nav>
                 </div>

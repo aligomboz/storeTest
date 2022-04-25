@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/vendor/owl.carousel2/assets/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.default.css') }}" id="theme-stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+    @if(App::getLocale() =='ar')
+        <link rel="stylesheet" href="{{ asset('frontend/css/custom_rtl.css') }}">
+    @endif
     <style>
        .navbar-nav .nav-item .nav-link .badge-counter {
     position: absolute;

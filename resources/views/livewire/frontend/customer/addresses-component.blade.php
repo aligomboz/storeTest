@@ -82,7 +82,7 @@
             <div class="col-lg-4 form-group">
                 <label class="text-small text-uppercase" for="city_id">{{ __('City') }}</label>
                 <select class="form-control form-control-lg" wire:model="city_id">
-                    <option value="">{{ __('Select City') }}</option>
+                    <option value="" disabled>{{ __('Select City') }}</option>
                     @forelse($cities as $city)
                         <option value="{{ $city->id }}">{{ $city->name }}</option>
                     @empty
@@ -103,7 +103,7 @@
             </div>
             <div class="col-lg-12 form-group">
                 <button class="btn btn-dark" type="submit">
-                    {{ $editMode ? 'Update address' : 'Add address' }}
+                    {{ $editMode ? __('Update address') : __('Add address') }}
                 </button>
             </div>
         </div>

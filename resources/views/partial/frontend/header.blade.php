@@ -54,7 +54,7 @@
                                 {{ auth()->user()->full_name }}
                             </a>
                             <div class="dropdown-menu mt-3" aria-labelledby="authDropdown">
-                                <a href="{{ route('customer.dashboard') }}" class="dropdown-item border-0">{{ __('Dashboard') }}</a>
+                                <a href="{{ route('customer.profile') }}" class="dropdown-item border-0">{{ __('Dashboard') }}</a>
                                 <a href="javascript:void(0);" class="dropdown-item border-0"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form action="{{ route('logout') }}" method="post" id="logout-form"

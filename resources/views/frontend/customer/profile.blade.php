@@ -49,32 +49,32 @@
                             @error('last_name')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-lg-6 form-group">
-                            <label class="text-small text-uppercase" for="email">Email address</label>
+                            <label class="text-small text-uppercase" for="email">{{ __('Email address') }}</label>
                             <input class="form-control form-control-lg" name="email" type="email" value="{{ old('email', auth()->user()->email) }}" placeholder="e.g. Jason@example.com">
                             @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-lg-6 form-group">
-                            <label class="text-small text-uppercase" for="mobile">Mobile number</label>
+                            <label class="text-small text-uppercase" for="mobile">{{ __('Mobile number') }}</label>
                             <input class="form-control form-control-lg" name="mobile" type="tel"  value="{{ old('mobile', auth()->user()->mobile) }}" placeholder="e.g. 966512345678">
                             @error('mobile')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-lg-6 form-group">
-                            <label class="text-small text-uppercase d-flex" for="password">Password <small class="ml-auto text-danger">(Optional)</small></label>
+                            <label class="text-small text-uppercase d-flex" for="password">{{ __('Password') }} <small class="ml-auto text-danger">(Optional)</small></label>
                             <input class="form-control form-control-lg" name="password" type="password">
                             @error('password')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-lg-6 form-group">
-                            <label class="text-small text-uppercase d-flex" for="password_confirmation">Re-Password <small class="ml-auto text-danger">(Optional)</small></label>
+                            <label class="text-small text-uppercase d-flex" for="password_confirmation">{{ __('Re-Password') }} <small class="ml-auto text-danger">(Optional)</small></label>
                             <input class="form-control form-control-lg" name="password_confirmation" type="password">
                             @error('password_confirmation')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-lg-12 form-group">
-                            <label class="text-small text-uppercase" for="user_image">Image</label>
+                            <label class="text-small text-uppercase" for="user_image">{{ __('Image') }}</label>
                             <input class="form-control form-control-lg" name="user_image" type="file">
                             @error('user_image')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-lg-12 form-group">
-                            <button class="btn btn-dark" type="submit">Update profile</button>
+                            <button class="btn btn-dark" type="submit">{{ __('Update profile') }}</button>
                         </div>
                     </div>
 
