@@ -74,9 +74,11 @@ class CustomerAddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(UserAddress $customer_address)
     {
-        //
+        return view('backend.customer_addresses.show',[
+            'customer_address'=>$customer_address,
+        ]);
     }
 
     /**

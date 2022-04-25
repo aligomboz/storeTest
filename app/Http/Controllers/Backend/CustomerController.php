@@ -96,9 +96,11 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $customer)
     {
-        //
+        return view('backend.customers.show',[
+            'user'=> $customer,
+        ]);
     }
 
     /**
