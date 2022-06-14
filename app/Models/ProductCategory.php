@@ -12,6 +12,7 @@ class ProductCategory extends Model
     use HasFactory ,HasTranslations, SearchableTrait;
     
     public $translatable = ['name','slug'];
+    
     protected $fillable = [
         'name',
         'slug',

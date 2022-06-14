@@ -7,7 +7,7 @@
             <div class="row mb-5">
                 <div class="col-lg-6">
                     <!-- PRODUCT SLIDER-->
-                    <div class="row m-sm-0">
+                    <div class="row m-sm-0" dir="ltr">
                         <div class="col-sm-2 p-sm-0 order-2 order-sm-1 mt-2 mt-sm-0">
                             <div class="owl-thumbs d-flex flex-row flex-sm-column" data-slider-id="1">
                                 @foreach($product->media as $media)

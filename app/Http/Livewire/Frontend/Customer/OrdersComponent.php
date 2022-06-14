@@ -14,9 +14,9 @@ class OrdersComponent extends Component
 
     public function displayOrder($id)
     {
-        $this->order = Order::with('products')->findOrFail($id);
 
-        $this->showOrder = true;
+        $this->order = Order::with('products')->where('id', $id)->get();
+        $this->showOrder = false;
     }
 
     public function requestReturnOrder($id)
@@ -40,6 +40,7 @@ class OrdersComponent extends Component
     {
         return view('livewire.frontend.customer.orders-component', [
             'orders' => auth()->user()->orders,
+            'products' => $this->order,
         ]);
     }
 }

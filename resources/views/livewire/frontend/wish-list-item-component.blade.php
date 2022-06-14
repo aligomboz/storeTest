@@ -18,7 +18,7 @@
     </td>
     <td class="align-middle border-0 a-cart">
         <a wire:click.prevent="moveToCart('{{ $wishlistItem->rowId }}')" x-on:click="show = false" class="reset-anchor">
-            Move to cart
+            {{ __('Move to cart') }}
         </a>
     </td>
     <td class="align-middle border-0">

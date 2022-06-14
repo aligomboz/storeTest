@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row px-4 px-lg-5 py-lg-4 align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="h2 text-uppercase mb-0">{{ __('Register') }}</h1>
+                    <h1 class="h2 text-left text-uppercase mb-0">{{ __('Register') }}</h1>
                 </div>
                 <div class="col-lg-6 text-lg-right">
 
@@ -17,9 +17,9 @@
     <section class="py-5">
         <div class="row">
             <div class="col-6 offset-3">
-                <h2 class="h5 text-uppercase mb-4">{{ __('Register') }}</h2>
+                <h2 class="h5 text-left text-uppercase mb-4">{{ __('Register') }}</h2>
 
-                <form method="POST" action="{{ route('register') }}">
+                <form class="text-left" method="POST" action="{{ route('register') }}">
                     @csrf
 
                     <div class="row">

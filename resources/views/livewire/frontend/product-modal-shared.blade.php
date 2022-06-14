@@ -2,7 +2,6 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body p-0">
-
                 @if($productModalCount)
                 <div class="row align-items-stretch">
                     <div class="col-lg-6 p-lg-0">
@@ -28,7 +27,6 @@
                     <div class="col-lg-6">
                         <button class="close p-4" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                         <div wire:ignore class="p-5 my-md-4">
-
                             <h2 class="h4">{{ $productModal->name }}</h2>
                             <p class="text-muted">${{ $productModal->price }}</p>
                             <p class="text-small mb-4">

@@ -94,8 +94,12 @@
     "Order Ref": "الطلبات",
     "Status": "حالة",
     "Date": "تاريخ",
-    "No orders found.": "لم يتم العثور على أية طلبات."
-
+    "No orders found.": "لم يتم العثور على أية طلبات.",
+    "Haven't an account": "هل لديك حساب؟",
+    "Forgot Your Password?": "نسيت  كلمة المرور؟",
+    "Wish List":"قائمة المفضلة",
+    "Move to cart":"انقل الى السلة",
+    "No items are found on your wish list!":"لم يتم العثور على عناصر في قائمة المفضلة الخاصة بك!"
 
 
 

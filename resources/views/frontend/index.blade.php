@@ -14,7 +14,6 @@
         </div>
     </section>
 
-
     <livewire:frontend.featured-product />
 
     <!-- SERVICES-->
