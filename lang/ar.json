@@ -99,10 +99,15 @@
     "Forgot Your Password?": "نسيت  كلمة المرور؟",
     "Wish List":"قائمة المفضلة",
     "Move to cart":"انقل الى السلة",
-    "No items are found on your wish list!":"لم يتم العثور على عناصر في قائمة المفضلة الخاصة بك!"
-
-
-
-
-
+    "No items are found on your wish list!":"لم يتم العثور على عناصر في قائمة المفضلة الخاصة بك!",
+    "First Name":"الاسم الاول",
+    "Last Name":"الاسم الاخير",
+    "E-mail Address":"البريد الالكتروني",
+    "Mobile Number":"رقم الهاتف المحمول",
+    "Have an account?":"هل لديك حساب؟",
+    "Verify Your Email Address":"تحقق من عنوان بريدك الإلكتروني",
+    "A fresh verification link has been sent to your email address.":"تم إرسال رابط تحقق جديد إلى عنوان بريدك الإلكتروني.",
+    "Before proceeding, please check your email for a verification link.":"قبل المتابعة ، يرجى التحقق من بريدك الإلكتروني للحصول على رابط التحقق.",
+    "If you did not receive the email":"إذا لم تستلم البريد الإلكتروني",
+    "click here to request another":"انقر هنا لطلب آخر"
 }

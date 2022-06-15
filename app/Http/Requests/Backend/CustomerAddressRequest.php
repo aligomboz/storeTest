@@ -37,7 +37,7 @@ class CustomerAddressRequest extends FormRequest
                     'email'             => 'required|email',
                     'mobile'            => 'required|numeric',
                     'address'           => 'required',
-                    'address2'          => '',
+                    'address2'          => 'nullable',
                     'country_id'        => 'required',
                     'state_id'          => 'required',
                     'city_id'           => 'required',

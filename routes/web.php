@@ -63,7 +63,7 @@ Route::group(
             Route::get('/orders', [CustomerControllers::class, 'orders'])->name('customer.orders');
         
             Route::group(['middleware' => 'check_cart'], function () {
-                Route::get('/checkout', [PaymentController::class, 'checkout'])->name('frontend.checkout');
+                Route::get('/checkout', [PaymentController::class, 'checkout'])->name('frontend.checkout')->middleware('verified');
                 Route::post('/checkout/payment', [PaymentController::class, 'checkout_now'])->name('checkout.payment');
                 Route::get('/checkout/{order_id}/cancelled', [PaymentController::class, 'cancelled'])->name('checkout.cancel');
                 Route::get('/checkout/{order_id}/completed', [PaymentController::class, 'completed'])->name('checkout.complete');
